@@ -29,6 +29,6 @@ It is pretty easy to use: ::
 
     from ccp.client import Client
     
-    client = Client('localhost', '80')
+    client = Client("localhost", "80")
     client.send("This is a simple message", "INFO", "category")
 
