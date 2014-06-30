@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='ccp',
-    version='0.2b',
+    version='0.3b',
     description="A Python client for the Changelog API",
     long_description=open('README.rst').read(),
     author="Adam Papai",
