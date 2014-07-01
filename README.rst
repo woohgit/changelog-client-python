@@ -35,3 +35,4 @@ It is pretty easy to use: ::
 You can pass a in a dict to specify additional HTTP headers, for example to do authentication::
 
     client.send("Message", "INFO", "category", {"Authorization", "Basic base64encoded"})
+
