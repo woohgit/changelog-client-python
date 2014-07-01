@@ -12,6 +12,7 @@ This module implements the Changelog API.
 import requests
 import json
 from time import time
+import logging
 from pkg_resources import get_distribution
 
 API_HOST = "localhost"
@@ -26,6 +27,7 @@ class Client(object):
         self.host = host
         self.port = port
         self.endpoint = "/api/events"
+        self.logger = logging.getLogger('changelog_client')
 
     def send(self, message, severity, category="misc"):
         headers = {
@@ -33,7 +35,7 @@ class Client(object):
         }
 
         url = self.get_url()
-        print url
+        self.logger.info('Sending changelog event to %s' % url)
         headers["Content-Type"] = "application/json"
         data = {
             "criticality": "%d" % SEVERITY[severity],
@@ -47,7 +49,7 @@ class Client(object):
             if "OK" in response.text:
                 return True
             else:
-                print "Failed to send message to server: %s" % response.text
+                self.logger.error("Failed to send changelog message to server: %s" % response.text)
         except Exception as e:
             raise("Failed to send message to server: %s" % e)
 
