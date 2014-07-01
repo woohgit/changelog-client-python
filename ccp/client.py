@@ -27,7 +27,7 @@ class Client(object):
         self.port = port
         self.endpoint = "/api/events"
 
-    def send(self, message, severity, category="misc"):
+    def send(self, message, severity, category="misc", extra_headers=None):
         headers = {
             "User-Agent": "ccp/client v.%s" % get_distribution("ccp").version
         }
@@ -35,6 +35,8 @@ class Client(object):
         url = self.get_url()
         print url
         headers["Content-Type"] = "application/json"
+        if extra_headers is not None:
+            headers.update(extra_headers)
         data = {
             "criticality": "%d" % SEVERITY[severity],
             "unix_timestamp": "%d" % time(),

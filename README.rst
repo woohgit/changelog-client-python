@@ -32,3 +32,6 @@ It is pretty easy to use: ::
     client = Client("localhost", "80")
     client.send("This is a simple message", "INFO", "category")
 
+You can pass a in a dict to specify additional HTTP headers, for example to do authentication::
+
+    client.send("Message", "INFO", "category", {"Authorization", "Basic base64encoded"})
