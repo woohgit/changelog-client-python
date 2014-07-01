@@ -27,6 +27,11 @@ class Client(object):
         self.port = port
         self.endpoint = "/api/events"
 
+    def deflate_severity(self, severity):
+        if isinstance(severity, int):
+            return severity
+        return SEVERITY[severity]
+
     def send(self, message, severity, category="misc"):
         headers = {
             "User-Agent": "ccp/client v.%s" % get_distribution("ccp").version
@@ -36,7 +41,7 @@ class Client(object):
         print url
         headers["Content-Type"] = "application/json"
         data = {
-            "criticality": "%d" % SEVERITY[severity],
+            "criticality": "%d" % self.deflate_severity(severity),
             "unix_timestamp": "%d" % time(),
             "category": category,
             "description": message
