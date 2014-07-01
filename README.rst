@@ -32,3 +32,8 @@ It is pretty easy to use: ::
     client = Client("localhost", "80")
     client.send("This is a simple message", "INFO", "category")
 
+
+Logging
+-------
+Logging happens into the logger called ``changelog_client`` by default. You can override it by setting the ``logger``
+property of a client instance to a ``Logger`` object.
