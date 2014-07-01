@@ -9,6 +9,7 @@ This module implements the Changelog API.
 
 """
 
+import sys
 import requests
 import json
 from time import time
@@ -50,8 +51,10 @@ class Client(object):
                 return True
             else:
                 self.logger.error("Failed to send changelog message to server: %s" % response.text)
-        except Exception as e:
-            raise("Failed to send message to server: %s" % e)
+        except Exception:
+            exc_info = sys.exc_info()
+            self.logger.exception("Failed to send changelog message to server")
+            raise exc_info[1], None, exc_info[2]
 
     def get_url(self):
         port = "" if self.port == 80 else ":%d" % self.port
