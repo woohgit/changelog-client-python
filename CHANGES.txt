@@ -1,0 +1,7 @@
+Version 0.4b
+    + Added better logging thanks to abesto (https://github.com/abesto)
+    + Add support for passing severity directly as an int thanks to abesto (https://github.com/abesto)
+    + Add support for passing extra headers thanks to abesto (https://github.com/abesto)
+
+Version 0.3b
+    + Initial release

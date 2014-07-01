@@ -1,0 +1,8 @@
+This software is written and maintained by Adam Papai:
+
+Contributors
+````````````
+Alphabetical order:
+
+- Adam Papai <https://github.com/woohgit>
+- Zoltan Nagy <https://github.com/abesto>
