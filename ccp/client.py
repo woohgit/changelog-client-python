@@ -52,15 +52,18 @@ class Client(object):
             "description": message
         }
         try:
-            response = requests.post(url, headers=headers, data=json.dumps(data))
+            response = requests.post(
+                url, headers=headers, data=json.dumps(data))
 
             if "OK" in response.text:
                 return True
             else:
-                self.logger.error("Failed to send changelog message to server: %s" % response.text)
+                self.logger.error(
+                    "Failed to send changelog message to server: %s" % response.text)
         except Exception:
             exc_info = sys.exc_info()
-            self.logger.exception("Failed to send changelog message to server")
+            self.logger.exception(
+                "Failed to send changelog message to server")
             raise exc_info[1], None, exc_info[2]
 
     def get_url(self):

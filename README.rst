@@ -29,12 +29,12 @@ It is pretty easy to use: ::
 
     from ccp.client import Client
     
-    client = Client("localhost", "80")
+    client = Client("localhost", 80)
     client.send("This is a simple message", "INFO", "category")
 
 You can pass a in a dict to specify additional HTTP headers, for example to do authentication::
 
-    client.send("Message", "INFO", "category", {"Authorization", "Basic base64encoded"})
+    client.send("Message", "INFO", "category", {"Authorization": "Basic base64encoded"})
 
 Logging
 -------
