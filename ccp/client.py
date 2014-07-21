@@ -65,6 +65,6 @@ class Client(object):
 
     def get_url(self):
         port = "" if self.port == 80 else ":%d" % self.port
-        protocol = "http://"
+        protocol = "https://" if self.port == 443 else "http://"
         base_full_url = "%s%s%s%s" % (protocol, self.host, port, self.endpoint)
         return base_full_url
