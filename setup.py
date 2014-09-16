@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='ccp',
-    version='0.6b',
+    version='1.0',
     description="A Python client for the Changelog API",
     long_description=open('README.rst').read() + '\n\n' +
                      open('CHANGES.txt').read(),
@@ -22,7 +22,7 @@ setup(
     license=open('LICENSE.txt').read(),
     zip_safe=False,
     classifiers=(
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',

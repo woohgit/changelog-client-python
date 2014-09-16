@@ -1,3 +1,6 @@
+Version 1.0
+    + 0.6b becomes stable 1.0 version
+
 Version 0.6b
 	+ Fixed Basic Authorization example in README
 
