@@ -1,3 +1,6 @@
+Version 1.1
+    + Ability to pass extra fields in case if somebody forked the changelog server and added new db fields.
+
 Version 1.0
     + 0.6b becomes stable 1.0 version
 

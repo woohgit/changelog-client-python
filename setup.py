@@ -7,10 +7,10 @@ except ImportError:
 
 setup(
     name='ccp',
-    version='1.0',
+    version='1.1',
     description="A Python client for the Changelog API",
     long_description=open('README.rst').read() + '\n\n' +
-                     open('CHANGES.txt').read(),
+            open('CHANGES.txt').read(),
     author="Adam Papai",
     author_email="wooh@wooh.hu",
     url="http://github.com/woohgit/changelog-client-python",

@@ -35,7 +35,7 @@ class Client(object):
             return severity
         return SEVERITY[severity]
 
-    def send(self, message, severity, category="misc", extra_headers=None):
+    def send(self, message, severity, category="misc", extra_headers=None, extra_fields=None):
         headers = {
             "User-Agent": "ccp/client v.%s" % get_distribution("ccp").version
         }
@@ -51,6 +51,8 @@ class Client(object):
             "category": category,
             "description": message
         }
+        if extra_fields:
+            data.update(extra_fields)
         try:
             response = requests.post(
                 url, headers=headers, data=json.dumps(data))

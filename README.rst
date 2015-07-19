@@ -11,7 +11,7 @@ Installation
 To install ccp, simply: ::
 
     $ pip install ccp
-    
+
 
 Supported severities
 --------------------
@@ -28,13 +28,18 @@ Example
 It is pretty easy to use: ::
 
     from ccp.client import Client
-    
+
     client = Client("localhost", 80)
     client.send("This is a simple message", "INFO", "category")
 
-You can pass a in a dict to specify additional HTTP headers, for example to do authentication::
+You can pass a dict to specify additional HTTP headers, for example to do authentication::
 
     client.send("Message", "INFO", "category", {"Authorization": "Basic base64encoded"})
+
+You can pass a dict to specify additional database fields:
+
+    client.send("Message", "INFO", "category", {"Authorization": "Basic base64encoded"}, extra_fields={"field_1": "value1", "field_2": "value2"})
+
 
 Logging
 -------
